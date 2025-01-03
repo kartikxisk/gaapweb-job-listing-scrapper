@@ -1,36 +1,33 @@
-# Web Scraping Documentation
+# Gaapweb Job Listings Scraper
 
-## 1. Introduction
-This document outlines the procedure for extracting key job details from job listings on the Gaapweb website. It includes information on how to:
-- Extract data.
-- Handle pagination.
-- Run the script in headless mode.
-- Display the extracted data as a DataFrame.
-- Adhere to best practices while scraping.
+This project is a web scraping script designed to extract job listing details from the [Gaapweb](https://www.gaapweb.com/) website. The script uses Python and Selenium to navigate the website, extract relevant job details, and save the data to a CSV file. It adheres to ethical scraping practices by respecting the `robots.txt` file and implementing rate limiting.
 
----
-## 2. Run
-``` python first_script.py```
-## 3. Procedure for Extracting Key Details
+## Features
 
-### 2.1 Extracting Key Job Details
-The following details are extracted from each job listing:
-- **Job Title**: The title of the job position.
-- **Company Name**: The name of the company offering the job.
-- **Location**: The geographical location of the job.
-- **Salary**: The offered salary, if available.
-- **Date Posted**: The time elapsed since the job was posted, formatted as a date.
-- **Job URL**: The link to the job listing for more information (*not found on the page*).
+- **Data Extraction**: Scrapes job titles, company names, locations, salaries, and job posting dates.
+- **Pagination Handling**: Automatically navigates through multiple pages of job listings.
+- **Headless Mode**: Runs in headless mode for efficiency and reduced resource consumption.
+- **Data Output**: Outputs the scraped data as a CSV file for further analysis.
 
-To extract these details, Selenium is used to locate the relevant elements in the HTML structure of the webpage. Below is the relevant Python code snippet:
+## Requirements
 
-```python
-# Code snippet for extracting job details
-from selenium import webdriver
-from selenium.webdriver.common.by import By
+Before running the script, ensure you have the following installed:
 
-# Example: Extracting Job Title
-job_titles = driver.find_elements(By.CLASS_NAME, 'job-title-class')
-for title in job_titles:
-    print(title.text)
+- Python 3.8 or later
+- Google Chrome browser
+- ChromeDriver (compatible with your Chrome version)
+- Required Python libraries: `selenium`, `pandas`, `datetime`
 
+After installing the dependencies run using this command:
+```
+python first-scrap.py
+```
+
+## Contributing
+Contributions are welcome! Feel free to open issues or submit pull requests.
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Disclaimer
+This script is for educational and personal use only. Ensure you have permission to scrape the website before running the script.
