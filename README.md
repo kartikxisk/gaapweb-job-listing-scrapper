@@ -9,8 +9,9 @@ This document outlines the procedure for extracting key job details from job lis
 - Adhere to best practices while scraping.
 
 ---
-
-## 2. Procedure for Extracting Key Details
+## 2. Run
+``` python first_script.py```
+## 3. Procedure for Extracting Key Details
 
 ### 2.1 Extracting Key Job Details
 The following details are extracted from each job listing:
